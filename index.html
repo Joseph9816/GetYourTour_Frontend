@@ -26,9 +26,9 @@
             </div>
 
             <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Login</a></li>
+                <ul id="right">
+                    <li><a href="#"><img src="/images/shopping-cart.png" alt="shopping-cart"></a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#logInModal">Login</a></li>  
                     <li><a href="/interfaces/Register.html">Registrarse</a></li>
                 </ul>
             </nav>
@@ -78,7 +78,7 @@
                                 <p>
                                     Tour por la ciudad más rica del mundo <br>
                                     Duración aproximada: 1 - 2 horas <br>
-                                    4.7 {{starst}} <br>
+                                    4.7 {{stars}} <br>
                                     Desde <b>$45</b> por persona
                                 </p>
                                <!-- <a href="">Ver más</a> -->
@@ -88,6 +88,24 @@
                 </div>
             </div>
             
+        </div>
+
+        <div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
         </div>
         
     </div>
@@ -100,7 +118,7 @@
             data() {
                 return{
                     name: 'Get Your Tour',
-                    starst: '⭐⭐⭐⭐⭐'
+                    stars: '⭐⭐⭐⭐⭐'
                      
                 }
             }
