@@ -137,29 +137,13 @@ export default {
             if(!/^([a-zA-Z])*$/.test(this.form.country)){
                 this.form.country = this.form.country.slice(0, -1);
             }
-           /*  var key = e.keyCode || e.which,
-                tecla = String.fromCharCode(key).toLowerCase(),
-                letras = " áéíóúabcdefghijklmnñopqrstuvwxyz",
-                especiales = [8, 37, 39, 46],
-                tecla_especial = false;
-
-            for (var i in especiales) {
-                if (key == especiales[i]) {
-                    tecla_especial = true;
-                    break;
-                }
-            }
-
-            if (letras.indexOf(tecla) == -1 && !tecla_especial) {
-                return false;
-            } */
         }
     },
 }
 </script>
 
 
-    /*  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="../models/validations.js"></script>   */
+    <script src="../models/validations.js"></script>   -->
