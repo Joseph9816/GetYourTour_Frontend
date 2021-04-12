@@ -35,9 +35,8 @@
                                     <span class="input-group-text" id="basic-addon1"><img src="../assets/world.png" alt="personalInformation" width="20px" height="20px"></span>
                                     <select
                                         class="form-control"
-                                        v-model="form.countries">
-                                        <option value="" selected>País de Residencia</option>
-                                        <option v-for="country in form.countries" :key="country.code" value={{ country.name }}>{{ country.name }}</option>
+                                        v-model="form.country">
+                                        <option v-for="country in countries" :key="country.code" :value="country.code">{{ country.name }}</option>
                                     </select>
                                 </div>
 
@@ -105,6 +104,7 @@ import {
     maxLength,
     requiredIf */
 } from "vuelidate";
+import Country from '@/models/country.js'
 
 export default {
     data() {
@@ -112,23 +112,27 @@ export default {
             form: {
                 name: "",
                 last_name: "",
-                countries: [],
+                country: "CR",
                 birth_date: "",
                 email: "",
                 password: "",
                 password_confirmed: ""
-            }
+            },
+            countries: [],
         }
     },
-    mounted() {
-
+    async mounted() {
+        let response = await Country.getCountries();
+        console.log(response[1].name);
+        this.countries = response;
+        console.log(this.countries);
     },
     methods: {
         soloLetras() {
             
-            if(!/^([a-zA-Z])*$/.test(this.form.country)){
+            /* if(!/^([a-zA-Z])*$/.test(this.form.country)){
                 this.form.country = this.form.country.slice(0, -1);
-            }
+            } */
         }
     },
 }
