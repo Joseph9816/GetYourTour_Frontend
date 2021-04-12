@@ -9,14 +9,21 @@
 <script>
 
 import Navigator from "@/components/Navigator"
+import Token from "@/models/token.js"
 
 export default {
 
   data() {
     return {
       name: 'Get Your Tour',
-      stars: '⭐⭐⭐⭐⭐'
+      stars: '⭐⭐⭐⭐⭐',
+      token: ""
     }
+  },
+  async mounted() {
+    let response = await Token.getToken();
+    this.token = response;
+    localStorage.setItem('token', this.token);
   },
   components: {
     Navigator

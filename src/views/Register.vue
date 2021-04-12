@@ -4,91 +4,83 @@
             <div class="col">
                 <br>
                 <div class="card">
-                    <h5 class="card-header" id="titleCardRegister">Regístrate</h5>
+                    <h5 class="card-header" id="titleCardRegister">Regístrarse</h5>
                     <div class="card-body">
                       <h5 class="card-title">Ingrese sus datos</h5>
-                        <form action="" onsubmit="return validarCampos()"> 
+                        <form @submit.prevent="submit"> 
                             <!-- <p> --> 
+
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><img src="../assets/name.png" alt="personalInformation" width="20px" height="20px"></span>
                                     <input 
-                                        v-model="name" 
+                                        v-model="form.name" 
                                         type="text" 
                                         class="form-control" 
                                         placeholder="Nombre" 
-                                        aria-label="Nombre" 
-                                        aria-describedby="basic-addon1" 
                                         onkeypress="return soloLetras(event)" 
                                         required>
                                 </div>
+
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><img src="../assets/name.png" alt="personalInformation" width="20px" height="20px"></span>
                                     <input 
-                                        v-model="last_name"
+                                        v-model="form.last_name"
                                         type="text" 
                                         class="form-control" 
                                         placeholder="Primer apellido" 
-                                        aria-label="Primer apellido" 
-                                        aria-describedby="basic-addon1" 
                                         onkeypress="return soloLetras(event)">
                                 </div>
+
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><img src="../assets/world.png" alt="personalInformation" width="20px" height="20px"></span>
-                                    <input 
-                                        v-model="country"
-                                        type="text" 
-                                        class="form-control" 
-                                        placeholder="País" 
-                                        aria-label="País" 
-                                        aria-describedby="basic-addon1" 
-                                        @keypress="soloLetras(event)">
+                                    <select
+                                        class="form-control"
+                                        v-model="form.countries">
+                                        <option value="" selected>País de Residencia</option>
+                                        <option v-for="country in form.countries" :key="country.code" value={{ country.name }}>{{ country.name }}</option>
+                                    </select>
                                 </div>
+
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><img src="/assets/calendar.png" alt="date" width="20px" height="20px"></span>
                                     <input 
-                                        v-model="birth_day"
+                                        v-model="form.birth_day"
                                         type="date"
                                         class="form-control" 
-                                        placeholder="Fecha de nacimiento" 
-                                        aria-label="Fecha de nacimiento" 
-                                        aria-describedby="basic-addon1" 
+                                        placeholder="Fecha de nacimiento"
                                         required>
                                 </div>
+
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1">@</span>
                                     <input 
-                                        v-model="email"
+                                        v-model="form.email"
                                         type="email" 
                                         class="form-control" 
-                                        placeholder="Correo" 
-                                        aria-label="Correo" 
-                                        aria-describedby="basic-addon1" 
+                                        placeholder="Correo"
                                         required>
                                 </div>
+
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><img src="../assets/padlock.png" alt="pssw" height="20px" width="20px"></span>
                                     <input 
-                                        v-model="password"
+                                        v-model="form.password"
                                         type="password" 
                                         class="form-control" 
-                                        placeholder="Contraseña" 
-                                        aria-label="Contraseña" 
-                                        aria-describedby="basic-addon1" 
-                                        id="contrasena" 
+                                        placeholder="Contraseña"
                                         required>
                                 </div>
+
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1"><img src="../assets/padlock.png" alt="pssw" height="20px" width="20px"></span>
                                     <input 
-                                        v-model="password_confirmed"
+                                        v-model="form.password_confirmed"
                                         type="password" 
                                         class="form-control" 
-                                        placeholder="Comprobar contraseña" 
-                                        aria-label="Comprobar contraseña" 
-                                        aria-describedby="basic-addon1" 
-                                        id="contrasena" 
+                                        placeholder="Comprobar contraseña"
                                         required>
                                 </div>
+
                            <!--  </p> -->
                             <div  id="buttonsRegisterCard">
                                 <a href="/index.html" class="btn btn-danger">Regresar</a>
@@ -120,7 +112,7 @@ export default {
             form: {
                 name: "",
                 last_name: "",
-                country: 1,
+                countries: [],
                 birth_date: "",
                 email: "",
                 password: "",

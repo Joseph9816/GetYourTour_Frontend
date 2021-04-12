@@ -10,5 +10,7 @@ class User {
         })
         .then(({ data }) => (response = data))
         .catch(errors => (response = errors));
+        return response;
     }
 }
+export default User;
