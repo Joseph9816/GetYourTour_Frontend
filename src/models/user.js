@@ -22,7 +22,7 @@ class User {
         })
         .then(({ data }) => (response = data))
         .catch(errors => (response = errors));
-        let res  =""
+        let res  ="";
         for (let i = 1; i < response.length; i++) {
             res += response[i];
         }
@@ -38,7 +38,7 @@ class User {
         })
         .then(({ data }) => (response = data))
         .catch(errors => (response = errors));
-        let res  =""
+        let res  ="";
         for (let i = 1; i < response.length; i++) {
             res += response[i];
         }

@@ -93,7 +93,7 @@
                                 <div v-if="$v.form.birth_day.$error" class="invalid-feedback text-left">
 
                                     <div v-if="!$v.form.birth_day.required">
-                                        El campo primer apellido es obligatorio.
+                                        El campo echa de nacimiento es obligatorio.
                                     </div>
                                 </div>
                             </div>
@@ -199,10 +199,6 @@
                                     <i class="far fa-arrow-alt-circle-right"></i>
                                 </button>
                             </div>
-                            <!-- <div  id="buttonsRegisterCard">
-                                <a href="/index.html" class="btn btn-danger">Regresar</a>
-                                <input type="submit" class="btn btn-success" value="Registrarse">
-                            </div> -->
                         </form>
                     </div>
                   </div>
