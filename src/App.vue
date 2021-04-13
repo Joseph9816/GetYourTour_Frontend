@@ -62,9 +62,10 @@ export default {
     box-sizing: border-box;
 }
 body{
-    height: 2000px;
     font-family:'Roboto', sans-serif;
     background-image: url("assets/background.jpg");
+    /*height: 2000px;*/
+    background-color: rgba(216, 216, 216, 0.782);
     background-size: cover;
 }
 </style>

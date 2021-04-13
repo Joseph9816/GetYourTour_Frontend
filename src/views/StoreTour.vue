@@ -257,7 +257,6 @@
 
 import {
     required,
-    //helpers,
     numeric,
     maxLength,
 } from "vuelidate/lib/validators";
@@ -265,9 +264,8 @@ import Country from '@/models/country.js'
 import Tour from '@/models/tour.js'
 import TourCategory from '@/models/tourCategory.js'
 import Place from '@/models/place.js'
-//import TourInformationCreate from '@/components/TourInformationCreate'
-import TourExtrasCreate from '@/components/TourExtrasCreate'
-import TourImagesCreate from '@/components/TourImagesCreate'
+import TourExtrasCreate from '@/components/StoreTour/TourExtrasCreate'
+import TourImagesCreate from '@/components/StoreTour/TourImagesCreate'
 //import User from '@/models/user.js'
 
 
@@ -285,7 +283,7 @@ export default {
                 duration: "00:00",
                 meeting_point: "",
                 price: "",
-                capacity: 0,
+                capacity: 1,
                 tour_category_id: "",
                 place_id: "",
                 country_id: "CR",
@@ -325,10 +323,10 @@ export default {
             let response = await TourCategory.store({'name': this.tour_category});
             let response2 = await Place.store({'name': this.place});
             if(response.status && response2.status) {
-                console.log("paso");
-                console.log(response.tour_category_id);
+                
                 this.form.tour_category_id = response.tour_category_id;
                 this.form.place_id = response2.place_id;
+
                 let response3 = await Tour.store(this.form);
                 this.tour = response3.tour_id;
             }
