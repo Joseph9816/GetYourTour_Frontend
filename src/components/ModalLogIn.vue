@@ -8,7 +8,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form  @submit.prevent="submit">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
                                 <input 
@@ -16,23 +16,27 @@
                                     class="form-control" 
                                     id="exampleInputEmail1" 
                                     aria-describedby="emailHelp" 
-                                    placeholder="ejemplo@correo.com">
+                                    placeholder="ejemplo@correo.com"
+                                    required>
                                 <div id="emailHelp" class="form-text">No compartiremos tu correo con alguien más.</div>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                                <input
+                                    type="password" 
+                                    class="form-control" 
+                                    id="exampleInputPassword1" 
+                                    placeholder="Contraseña"
+                                    required>
                             </div>
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <div id="buttonSubmit">
+                                <button type="submit" class="btn btn-success">Ingresar</button>
+                            </div>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -43,5 +47,8 @@
 <style scoped>
 .exampleModalLabel{
     color: black !important;
+}
+#buttonSubmit{
+    text-align: center;
 }
 </style>
