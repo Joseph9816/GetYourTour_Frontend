@@ -1,7 +1,9 @@
 <template>
+  
   <div id="app">
     <Navigator />
     <router-view />
+    <Modal />
   </div>
 </template>
 
@@ -10,6 +12,7 @@
 
 import Navigator from "@/components/Navigator"
 import Token from "@/models/token.js"
+import Modal from "@//components/ModalLogIn.vue"
 
 export default {
 
@@ -26,7 +29,8 @@ export default {
     localStorage.setItem('token', this.token);
   },
   components: {
-    Navigator
+    Navigator,
+    Modal,
   }
 }
 </script>
@@ -62,7 +66,6 @@ body{
     font-family:'Roboto', sans-serif;
     background-image: url("assets/background.jpg");
     background-size: cover;
-    color: whitesmoke !important;
 }
 </style>
 
