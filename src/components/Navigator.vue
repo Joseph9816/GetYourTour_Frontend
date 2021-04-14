@@ -3,7 +3,7 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#"><img src="../assets/globe.png" alt="Logo" width="40px" height="40px"> GetYourTours</a>
+                    <router-link to="/"><a class="navbar-brand" href="#"><img src="../assets/globe.png" alt="Logo" width="40px" height="40px"> GetYourTours</a></router-link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -19,7 +19,8 @@
                                     <a class="nav-link active" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Login</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#">Registrarse</a>
+                                    <router-link to="/register"><a class="nav-link active">Registrarse</a></router-link>
+                                    <!--<a class="nav-link active">Registrarse</a>-->
                                 </li>
                             </ul>
                         </form>
@@ -29,4 +30,3 @@
         </header>
     </div>
 </template>
-

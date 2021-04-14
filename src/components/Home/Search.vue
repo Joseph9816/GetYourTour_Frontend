@@ -8,19 +8,19 @@
                         <form @submit.prevent="submit">
                             <div class="input-group mb-3">
                                 <input 
-                                v-model="where"
+                                
                                 type="text" class="form-control" 
                                 placeholder="¿A donde vas?" 
                                 aria-label="¿A donde vas?">
                                 <span class="input-group-text" id="basic-addon1">Ida</span>
                                 <input
-                                v-model="date_going"
+                             
                                 type="date" class="form-control" 
                                 placeholder="ida" 
                                 aria-label="ida">
                                 <span class="input-group-text" id="basic-addon1">Vuelta</span>
                                 <input
-                                v-model="date_final"
+                                
                                 type="date" class="form-control" 
                                 placeholder="vuelta"
                                 aria-label="vuelta">
@@ -39,19 +39,6 @@
     </div>
 </template>
 
-<script>
-export default {
-    data(){
-        return {
-            form:{
-                where: "",
-                date_going: "",
-                date_final: "",
-            }
-        }
-    }
-}
-</script>
 
 <style Scoped>
     #containerSearch{
