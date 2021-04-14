@@ -2,11 +2,13 @@ import axios from "axios";
 
 class TourImages {
 
-    static async store(data){
+    static async store(data, id){
         let response = await axios
-        .post("http://127.0.0.1:8001/api/getyourtour/tour-images", data, {
+        .post("http://127.0.0.1:8001/api/getyourtour/tour-images/" + id, data, {
             headers: {
-                Authorization: "Bearer " + localStorage.getItem('token')
+                Authorization: "Bearer " + localStorage.getItem('token'),
+                "Content-Type": "multipart/form-data",
+                "Access-Control-Allow-Origin": "*",
             }
         })
         .then(({ data }) => (response = data))

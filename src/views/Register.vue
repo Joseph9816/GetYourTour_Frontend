@@ -225,7 +225,7 @@ const fullNameSyntax = helpers.regex(
 
 const passwordSyntax = helpers.regex(
     "passwordSyntax",
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@/$!%*?&])([A-Za-z\d$@$/!%*?&]|[^ ]){8,32}$/
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@/$.,;!%*?&])([A-Za-z\d$@$/!%*?&]|[^ ]){8,32}$/
 ); 
 
 export default {

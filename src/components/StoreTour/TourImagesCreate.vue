@@ -49,18 +49,16 @@ export default {
     },
 
     methods: {
-        add(e) {
+        async add(e) {
             let file = e.target.files[0];
             this.image.image = file;
-            /* Tour.setImage({
-                image: this.image,
-                tour_id: this.tour_id
-            }); */
-            console.log(this.tour_id);
-            TourImages.store({
-                image: this.image,
-                tour_id: this.tour_id//hay que cambiarlo
-            });
+
+            let formData = new FormData();
+
+            formData.append('image', file);
+             await TourImages.store(formData, this.tour_id);  
+
+
             this.image = {
                 name: "",
                 stock: 0,

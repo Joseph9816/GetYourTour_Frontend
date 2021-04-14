@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container"><br><br><br><br>
         <h1 class="pb-2 border-bottom text-center" style="color:black">Nuevo Tour</h1>
         
         <div class="container" id="featured-3" v-if="tour == ''">
@@ -246,10 +246,8 @@
                 </div>
             </form>
         </div>
-
-        <!--<TourInformationCreate v-if="tour_id == ''" v-on:tour_id="asignTourId"/>-->
-        <TourExtrasCreate :tour_id="tour" v-if="tour != ''" />
         <TourImagesCreate :tour_id="tour" v-if="tour != ''" />
+        <TourExtrasCreate :tour_id="tour" v-if="tour != ''" />
     </div>
 </template>
 
@@ -274,7 +272,7 @@ export default {
 
     data() {
         return {
-            tour: '',
+            tour: 1,
             form: {
                 name: "",
                 description: "",
@@ -300,7 +298,6 @@ export default {
     },
 
     components: {
-        //TourInformationCreate,
         TourExtrasCreate,
         TourImagesCreate
     },
@@ -323,12 +320,12 @@ export default {
             let response = await TourCategory.store({'name': this.tour_category});
             let response2 = await Place.store({'name': this.place});
             if(response.status && response2.status) {
-                
+
                 this.form.tour_category_id = response.tour_category_id;
                 this.form.place_id = response2.place_id;
 
                 let response3 = await Tour.store(this.form);
-                this.tour = response3.tour_id;
+                this.tour = parseInt(response3.tour_id);
             }
             
             /* let response =  *///await Tour.store(this.form);
