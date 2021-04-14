@@ -120,7 +120,7 @@
                                     <div v-else-if="!$v.form.email.email">
                                         {{ this.form.email }} no es un correo
                                         válido.
-                                        <br />
+                                        <br>
                                         Por ejemplo: ejemplo@servidor.com
                                     </div>
 
@@ -277,7 +277,7 @@ export default {
 
             this.$router
                 .push({
-                    name: "home",
+                    name: "Home",
                     params : {
                         user: {
                             id: id,

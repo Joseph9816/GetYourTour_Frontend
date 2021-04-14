@@ -44,5 +44,20 @@ class User {
         }
         return JSON.parse(res);
     }
+    static async login(data){
+        let response = await axios
+        .post("http://127.0.0.1:8001/api/getyourtour/users/login", data, {
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem('token')
+            }
+        })
+        .then(({ data }) => (response = data))
+        .catch(errors => (response = errors));
+        let res  =""
+        for (let i = 1; i < response.length; i++) {
+            res += response[i];
+        }
+        return res;
+    }
 }
 export default User;
