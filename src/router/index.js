@@ -30,11 +30,44 @@ const routes = [
     name: "register",
     component: () =>
     import(/* webpackChunkName: "register" */ "../views/Register.vue"),
+
+    /* props: true,
+    meta: { login: true },
+
+    beforeEnter: (to, from, next) => {
+        const auth = to.params.auth;
+
+        if (!auth.logged) {
+            next();
+        } else {
+            next("/");
+        }
+    } */
+  },
+  {
+    path: "/storeTour",
+    name: "store",
+    component: () =>
+    import(/* webpackChunkName: "storeTour" */ "../views/StoreTour.vue"),
   },
 ];
 
 const router = new VueRouter({
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.login) {
+        const auth = to.params.auth;
+
+        if (auth && auth.logged) {
+            next();
+        } else {
+            next("/");
+        }
+    } else {
+        next();
+    }
 });
 
 export default router;
