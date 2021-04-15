@@ -32,6 +32,21 @@ class Tour {
         }
         return JSON.parse(res);
     }
+    static async searchDate(data){
+        let response = await axios
+        .put("http://127.0.0.1:8001/api/getyourtour/tours/search", data, {
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem('token')
+            }
+        })
+        .then(({ data }) => (response = data))
+        .catch(errors => (response = errors));
+        let res  ="";
+        for (let i = 1; i < response.length; i++) {
+            res += response[i];
+        }
+        return JSON.parse(res);
+    }
     
     static async get(id){
         let response = await axios
