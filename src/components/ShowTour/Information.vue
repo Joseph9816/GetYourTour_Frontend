@@ -92,9 +92,16 @@
                             <p>{{ tour.meeting_point }}</p>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-3">
                             <h3>Descripción del Tour</h3>
                             <p>{{ tour.description }}</p>
+                        </div>
+                        
+                        <div class="col-3">
+                        <button type="button" @click="addShopping" class="btn btn-success px-4" style="margin-left: 5px; margin-top: 5px">
+                            Agregar al Carrito
+                            <i class="far fa-arrow-alt-circle-right"></i>
+                        </button>
                         </div>
 
                     </div>
@@ -263,6 +270,10 @@ export default {
                 comment: this.comment 
             });
             console.log(response);
+        },
+
+        async addShopping() {
+            
         }
     }
 

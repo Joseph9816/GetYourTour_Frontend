@@ -272,7 +272,7 @@ export default {
 
     data() {
         return {
-            tour: 1,
+            tour: '',
             form: {
                 name: "",
                 description: "",

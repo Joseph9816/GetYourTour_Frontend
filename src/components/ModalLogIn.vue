@@ -113,22 +113,27 @@ export default {
                 console.log(response);
                 console.log(res);
                 console.log(email);
-                            this.$router
-                                .push({
-                                    name: "Home",
-                                    params : {
-                                        user: {
-                                            id: id,
-                                            name: name,
-                                            last_name: last_name,
-                                            email: email,
-                                        },
-                                        auth: {
-                                            logged: true
-                                        }
-                                    }
-                                })
-                                .catch(() => {}); 
+                let next = 'Home';
+                if(res.admin == 1) {
+                    next = 'Administrator'
+                }
+                
+                this.$router
+                    .push({
+                        name: next,
+                        params : {
+                            user: {
+                                id: id,
+                                name: name,
+                                last_name: last_name,
+                                email: email,
+                            },
+                            auth: {
+                                logged: true
+                            }
+                        }
+                    })
+                    .catch(() => {}); 
 
             });
             }

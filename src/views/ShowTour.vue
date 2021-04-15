@@ -2,7 +2,7 @@
     <div class="container">
         <br><br><br><br>
         <!-- <Carousel :tour_id="3" style="margin-top: 30px" /> -->
-        <Information :tour_id="1" style="margin-top: 30px" />
+        <Information :tour_id="tour" style="margin-top: 30px" />
     </div>
 </template>
 
