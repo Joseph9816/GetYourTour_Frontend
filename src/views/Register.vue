@@ -271,6 +271,14 @@ export default {
                 email = res.email;
             });
 
+            localStorage.setItem('auth', true);
+            localStorage.setItem('user', JSON.stringify({
+                id: id,
+                name: name,
+                last_name: last_name,
+                email: email
+            }));
+
             this.$router
                 .push({
                     name: "Home",
@@ -314,7 +322,6 @@ export default {
                 email,
                 async unique(value) {
                     let response = await User.uniqueEmail(value);
-                    console.log(response);
                     return !response.unique;
                 } 
             },
