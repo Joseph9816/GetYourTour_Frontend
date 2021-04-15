@@ -17,6 +17,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Login</a>
+                                    <router-link to="/"><a class="nav-link active">Logout</a></router-link>
                                 </li>
                                 <li class="nav-item">
                                     <router-link to="/register"><a class="nav-link active">Registrarse</a></router-link>
@@ -30,3 +31,25 @@
         </header>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            logged: localStorage.getItem('auth')
+        }
+    },
+    
+    props: {
+        user: {
+            type: Object
+            //required: true
+        },
+
+        auth: {
+            type: Object
+            //required: true
+        }
+    },
+}
+</script>

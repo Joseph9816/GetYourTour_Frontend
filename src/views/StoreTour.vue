@@ -228,10 +228,10 @@
 
                                     <div class="row text-center">
                                         <div class="col ">
-                                            <button type="button" class="btn btn-danger px-4" style="margin-right: 5px">
+                                            <router-link to="/administrator"> <button type="button" class="btn btn-danger px-4" style="margin-right: 5px">
                                                 Regresar
                                                 <i class="far fa-arrow-alt-circle-right"></i>
-                                            </button>
+                                            </button></router-link>
 
                                             <button type="submit" class="btn btn-success px-4" style="margin-left: 5px">
                                                 Continuar

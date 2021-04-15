@@ -20,13 +20,21 @@ export default {
     return {
       name: 'Get Your Tour',
       stars: '⭐⭐⭐⭐⭐',
-      token: ""
+      token: "",
+      logged: false,
     }
   },
   async mounted() {
     let response = await Token.getToken();
     this.token = response;
     localStorage.setItem('token', this.token);
+    localStorage.setItem('user', JSON.stringify({
+      name: "",
+      last_name: "",
+      email: "",
+      id: ""
+    }));
+    //localStorage.setItem('auth', false);
   },
   components: {
     Navigator,

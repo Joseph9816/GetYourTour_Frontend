@@ -18,11 +18,29 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "place" */ "../views/Place.vue"),
   },
+  
+  {
+    path: "/administrator",
+    name: "Administrator",
+    component: () =>
+      import(/* webpackChunkName: "administrator" */ "../views/Administrator.vue"),
+  },
 
   {
     path: "/home",
     name: "Home2",
     component: Home2,
+    /* paramas: {
+      auth: {
+        logged: false,
+      },
+      user: {
+        name: "",
+        last_name: "",
+        email: "",
+        id: ""
+      }
+    } */
   },
 
   {
@@ -34,6 +52,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  
   {
     path: "/register",
     name: "register",
@@ -53,11 +72,19 @@ const routes = [
         }
     } */
   },
+
   {
     path: "/storeTour",
     name: "store",
     component: () =>
     import(/* webpackChunkName: "storeTour" */ "../views/StoreTour.vue"),
+  },
+  
+  {
+    path: "/showTour",
+    name: "show",
+    component: () =>
+    import(/* webpackChunkName: "showTour" */ "../views/ShowTour.vue"),
   },
 ];
 
